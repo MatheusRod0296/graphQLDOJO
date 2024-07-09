@@ -1,0 +1,15 @@
+﻿version: "3"
+
+services: 
+
+  mongoDB:
+    image: mongo
+    container_name: mongo_DB
+    ports:
+      - "27017:27017"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+
+
+      
