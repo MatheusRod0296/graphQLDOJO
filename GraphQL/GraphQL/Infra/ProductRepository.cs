@@ -23,4 +23,9 @@ public class ProductRepository : IProductRepository
 
         return await this.catalogContext.Products.Find(filter).FirstOrDefaultAsync();
     }
+    
+    public async Task AddProduct(ProductEntity product)
+    {
+        await this.catalogContext.Products.InsertOneAsync(product);
+    }
 }

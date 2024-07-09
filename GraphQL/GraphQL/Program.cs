@@ -8,7 +8,8 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddType<ProductType>()
-    .AddType<CategoryResolver>();
+    .AddType<CategoryResolver>()
+    .AddMutationType<Mutation>();
 
 
 builder.Services.AddSingleton<ICatalogContext, CatalogContext>();
@@ -20,10 +21,5 @@ var app = builder.Build();
 
 app.UseRouting();
 app.MapGraphQL();
-// app.UseEndpoints(endpoints =>
-//     {
-//         endpoints.MapGraphQL("/api/graphql");
-//     });
 
-//app.UseHttpsRedirection();
 app.Run();
